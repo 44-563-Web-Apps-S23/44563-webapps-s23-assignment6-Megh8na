@@ -9,19 +9,19 @@
 <body>
     <h2>Painter entry by Meghana Gade</h2>
     <form>
-        
-    <label for = "secretpaintername">The hidden painter name:</label>
 
-    <input type = "password" id="secretpaintername" name = "secretpaintername" value ="Monet">
+    <label for = "paintername">The hidden painter name:</label>
+
+    <input type = "password" id="paintername" name = "paintername" value ="Monet">
     <br>
-    <label for="guesspaintername">Guess the painter:</label>
+    <label for="guesspainter">Guess the painter:</label>
 
-    <input type="text" id="guesspaintername" name="guesspaintername">
+    <input type="text" id="guesspainter" name="guesspainter">
     <br>
     <button type="button" onclick="checkPainter()">Check the guess</button>
 
-  </form> <p>Good: <span id="good-count">0</span>, Oops: <span id="oops-count">0</span></p>
-
+  </form>   
+  <p id="result">This text will be replaced </p>
   <script>
 
     var good = 0;
@@ -30,15 +30,17 @@
 
     function checkPainter()  {
 
-      var secret_PainterName = document.getElementById("secretpaintername").value;
+      var secret_PainterName = document.getElementById("paintername").value;
 
-      var guessed_PainterName = document.getElementById("guesspaintername").value;
+      var guessed_PainterName = document.getElementById("guesspainter").value;
 
       if (guessed_PainterName.toLowerCase() === secret_PainterName.toLowerCase()){
 
         good++;
 
         alert("You got it right!");
+
+        document.getElementById("result").innerHTML = good;
 
        }
      else {
@@ -47,12 +49,11 @@
 
         alert("Sorry, wrong answer.");
 
+        document.getElementById("result").innerHTML = oops;
+
       }
-
-      document.getElementById("good-count").innerHTML = good;
-
-      document.getElementById("oops-count").innerHTML = oops;
     }
+
   </script>
 
 </body>
