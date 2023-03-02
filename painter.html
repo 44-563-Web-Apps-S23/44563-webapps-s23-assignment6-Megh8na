@@ -55,6 +55,33 @@
     }
 
   </script>
+  <div class="container">
+    <img id="Image" width="100" height="100" alt="Picture of a plant" src="Gaura.jpg" onclick="selectImage()">
+</div>
+
+<script>
+    var useImages=1;
+    function selectImage() {
+
+        switch (useImages) {
+            case 1:
+                useImages = 2; document.getElementById("Image").src = "Gaura.jpg"; 
+                break;
+            case 2:
+                useImages = 3; document.getElementById("Image").src = "Dianthus.jpg"; 
+                break;
+            case 3:
+                useImages = 1; document.getElementById("sImage").src = "Arum Lily.jpg"; 
+                break;
+
+
+        }
+
+    }
+    function giveAlert(){
+    alert("Sorry,ran out of guesses.");
+}
+</script>
 
 </body>
 </html>
